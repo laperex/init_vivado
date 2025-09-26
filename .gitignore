@@ -1,3 +1,7 @@
 /build
 vivado*
 /.Xil
+/xsim.dir
+/.gen
+/.srcs
+xvlog.pb

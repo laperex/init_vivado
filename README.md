@@ -1,32 +1,30 @@
-# Vivado Initialisation - Tcl
+# Vivado Initialisation
 
-Init a Vivado Project using Tcl file. 
+Init a Vivado Project using Tcl file.
 
-## Usage
+### Project Structure
 
-### Requirements
+	.
+	├── constraints	[ Constraints Files ]
+	│   └── constraints.xdc
+	├── rtl
+	│   ├── sim	[ Simulation TestBenches ]
+	│   │   └── interface_tb.v
+	│   └── src	[ Synthesisable Sources ]
+	│       └── interface.v
+	└── scripts	[ Script Files ]
+	    └── init_vivado.tcl
 
-- Vivado 2020.2+ installed and on `$PATH`
-- A supported FPGA board (e.g., Digilent Nexys A7 or Boolean)
-- ModelSim or Vivado Simulator (for simulation)
+### To launch Vivado and Initialize Project
 
-### To launch Vivado and automatically set up the project:
-
-1. **(Optional)** Source the Vivado environment:
-   
-```bash
-	source /opt/Xilinx/Vivado/2024.1/settings64.sh
-```
-
-Launch Vivado and initialize the project:
-
-```bash
-	vivado -mode gui -source init.tcl
-```
-
-Launch Vivado After initialization:
+1. Source the Vivado environment:
 
 ```bash
-	vivado ./build/<your project name>.xpr
+	source <path to vivado>/Vivado/2024.1/settings64.sh
 ```
 
+Launch Vivado:
+
+```bash
+	vivado -source ./scripts/init_vivado.tcl
+```
