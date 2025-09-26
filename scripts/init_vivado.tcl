@@ -24,6 +24,6 @@ foreach xdc_file [glob -nocomplain ./constraints/*.xdc] {
 
 update_compile_order -fileset sources_1
 
-set_property top triroc_readout_tb [get_filesets sim_1]
+set_property top interface_tb [get_filesets sim_1]
 
 update_compile_order -fileset sim_1
