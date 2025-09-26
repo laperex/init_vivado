@@ -4,7 +4,9 @@ set script_dir [file dirname $script_path]
 set proj_dir [file dirname $script_dir]
 set proj_name [file tail $proj_dir]
 
-create_project $proj_name ./build -part xc7s50csga324-1 -force
+set proj_fpga xc7s50csga324-1
+
+create_project $proj_name ./build -part $proj_fpga -force
 
 foreach f [glob -nocomplain ./rtl/src/*] {
     add_files $f
