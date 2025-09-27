@@ -6,7 +6,11 @@ set proj_name [file tail $proj_dir]
 
 set proj_fpga xc7s50csga324-1
 
+set proj_sim_default_top interface_tb
+
+
 create_project $proj_name ./build -part $proj_fpga -force
+
 
 foreach f [glob -nocomplain ./rtl/src/*] {
     add_files $f
@@ -26,6 +30,12 @@ foreach xdc_file [glob -nocomplain ./constraints/*.xdc] {
 
 update_compile_order -fileset sources_1
 
-set_property top interface_tb [get_filesets sim_1]
+set current_top [get_property top [get_filesets sim_1]]
+
+if { $current_top eq "" } {
+    set_property top $proj_sim_default_top [get_filesets sim_1]
+}
 
 update_compile_order -fileset sim_1
+
+launch_simulation
