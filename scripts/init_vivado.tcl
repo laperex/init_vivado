@@ -28,7 +28,7 @@ foreach xdc_file [glob -nocomplain ./constraints/*.xdc] {
     set_property USED_IN_IMPLEMENTATION true [get_files $xdc_file]
 }
 
-
+update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 
 set current_top [get_property top [get_filesets sim_1]]
