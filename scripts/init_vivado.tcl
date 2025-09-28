@@ -5,6 +5,7 @@ set proj_dir [file dirname $script_dir]
 set proj_name [file tail $proj_dir]
 
 set proj_fpga xc7s50csga324-1
+# set proj_fpga xc7a35tcpg236-1	Basys3
 
 set proj_sim_default_top interface_tb
 
