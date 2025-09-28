@@ -22,7 +22,7 @@ foreach f [glob -nocomplain ./rtl/sim/*] {
 }
 
 foreach xdc_file [glob -nocomplain ./constraints/*.xdc] {
-    add_files $xdc_file
+    add_files -fileset constrs_1 $xdc_file
     set_property FILE_TYPE XDC [get_files $xdc_file]
     set_property USED_IN_SYNTHESIS true [get_files $xdc_file]
     set_property USED_IN_IMPLEMENTATION true [get_files $xdc_file]
