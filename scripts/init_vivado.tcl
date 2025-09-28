@@ -29,7 +29,6 @@ foreach xdc_file [glob -nocomplain ./constraints/*.xdc] {
 }
 
 update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
 
 set current_top [get_property top [get_filesets sim_1]]
 
